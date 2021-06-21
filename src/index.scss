@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul, li {
+  display: block;
+}
+
+.container {
+  max-width: 1325px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gap-32 {
+  gap: 32px;
+}
