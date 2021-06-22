@@ -28,6 +28,10 @@ ul, li {
   justify-content: space-between;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
