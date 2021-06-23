@@ -3,7 +3,7 @@ import logo from '../images/logo.png'
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header" >
       <div className="container flex items-center justify-between">
         <div className="flex items-center logo">
           <img width={20} height={20} src={logo} alt="Logo" />
