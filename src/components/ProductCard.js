@@ -1,17 +1,24 @@
 import React from 'react';
 // import productImg from '../images/image.png'
 
-const ProductCard = (props) => {
+const ProductCard = ({image, categories, title, price, onAdd}) => {
+  const [isAdded, setIsAdded] = React.useState(false)
+
+  const onClickAdd = () => {
+    onAdd({image, categories, title, price})
+    setIsAdded(true)
+  }
+
   return (
     <div className="productCard" >
       <div className="productCard__img">
-        <img src={props.image} alt="title" />
+        <img src={image} alt="title" />
       </div>
       <div className="productCard__details">
-        <span>{props.categories}</span>
-        <h3>{props.title}</h3>
-        <span>${props.price}</span>
-        <button onClick={() => alert(props.title)}>Add to cart</button>
+        <span>{categories}</span>
+        <h3>{title}</h3>
+        <span>${price}</span>
+        <button className={isAdded ? 'checked' : ''} onClick={onClickAdd}>{isAdded ? "Added" : "Add to cart"}</button>
       </div>
       <div className="productCard__addToWishlist" >
         <button  >

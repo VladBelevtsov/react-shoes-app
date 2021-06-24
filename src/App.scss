@@ -111,6 +111,15 @@ main {
         cursor: pointer;
         transition: box-shadow .1s ease;
 
+        &.checked {
+          background-color: #000;
+          color: #fff;
+
+          &:hover {
+            box-shadow: none;
+          }
+        }
+
         &:hover {
           box-shadow: 0.25rem 0.25rem #111;
         }
@@ -156,6 +165,14 @@ main {
   height: 100%;
   background-color: rgba(0,0,0, 0.5);
   z-index: 1;
+
+  .closeSide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
 }
 
 .drawer {
