@@ -190,6 +190,14 @@ main {
     margin-bottom: 30px;
   }
 
+  .cartEmpty {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .items {
     flex: 1;
     overflow: auto;
