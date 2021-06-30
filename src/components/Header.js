@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 
 const Header = (props) => {
   return (
     <header className="header" >
       <div className="container flex items-center justify-between">
-        <div className="flex items-center logo">
-          <img width={20} height={20} src={logo} alt="Logo" />
-          <h3>Shoes App.</h3>
-        </div>
+        <Link to="/">
+          <div className="flex items-center logo">
+            <img width={20} height={20} src={logo} alt="Logo" />
+            <h3>Shoes App.</h3>
+          </div>
+        </Link>
         <ul className="flex">
           <li>
             <button className="cursor-pointer" onClick={props.onClickCart}>
@@ -16,6 +19,15 @@ const Header = (props) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
             </button>
+          </li>
+          <li>
+            <Link to="/favorites">
+              <button className="cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </button>
+            </Link>
           </li>
           <li>
             <button className="cursor-pointer">
