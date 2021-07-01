@@ -16,7 +16,7 @@ const Drawer = ({onClose, onRemove, items = []}) => {
             <div className="items" >
 
               {items.map((obj) => (
-                <div className="cartItem flex items-center">
+                <div key={obj.id} className="cartItem flex items-center">
                   <img width={70} src={obj.image} alt="title" />
                   <div>
                     <span>{obj.categories}</span>
