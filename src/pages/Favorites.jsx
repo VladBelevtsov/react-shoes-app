@@ -1,7 +1,10 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard'
+import AppContext from '../context'
 
-const Favorites = ({ items, onAddToFavorite }) => {
+const Favorites = () => {
+  const {favorites, onAddToFavorite} = React.useContext(AppContext)
+
   return (
     <main>
       <div className="container">
@@ -11,7 +14,7 @@ const Favorites = ({ items, onAddToFavorite }) => {
           </h1>
         </div>
         <div className="grid grid-cols-4 gap-32 mt-60">
-          {items.map((item, index) => (
+          {favorites.map((item, index) => (
             <ProductCard 
               key={index} 
               favorited={true}

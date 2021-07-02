@@ -1,9 +1,9 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard'
 
+
 const Home = ({
     items, 
-    cartItems,
     searchValue, 
     setSearchValue, 
     onChangeSearchInput, 
@@ -12,6 +12,8 @@ const Home = ({
     isLoading
   }) => {
 
+
+
   const renderItems = () => {
     return (isLoading ? [...Array(4)] : items.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase())))
       .map((item, index) => (
@@ -19,7 +21,6 @@ const Home = ({
         key={index} 
         onAdd={(obj) => onAddToCart(obj)}
         onFavorite={(obj) => onAddToFavorite(obj)}
-        added={cartItems.some((obj) => Number(obj.id) === Number(item.id))}
         loading={isLoading}
         {...item}
       />

@@ -1,6 +1,7 @@
 import React from 'react';
 import ContentLoader from "react-content-loader"
 // import productImg from '../images/image.png'
+import AppContext from '../context'
 
 const ProductCard = ({
     id,
@@ -11,16 +12,14 @@ const ProductCard = ({
     onAdd, 
     onFavorite, 
     favorited = false,
-    added = false,
     loading = false
   }) => {
 
-  const [isAdded, setIsAdded] = React.useState(added)
+  const {isItemAdded} = React.useContext(AppContext)
   const [isFavorite, setIsFavorite] = React.useState(favorited)
 
   const onClickAdd = () => {
     onAdd({id, image, categories, title, price})
-    setIsAdded(!isAdded)
   }
 
   const onClickWish = () => {
@@ -52,7 +51,7 @@ const ProductCard = ({
             <span>{categories}</span>
             <h3>{title}</h3>
             <span>${price}</span>
-            <button className={isAdded ? 'checked' : ''} onClick={onClickAdd}>{isAdded ? "Added" : "Add to cart"}</button>
+            <button className={isItemAdded(id) ? 'checked' : ''} onClick={onClickAdd}>{isItemAdded(id) ? "Added" : "Add to cart"}</button>
           </div>
           <div className="productCard__addToWishlist" >
             <button className={isFavorite ? 'active' : ''} onClick={onClickWish}>
