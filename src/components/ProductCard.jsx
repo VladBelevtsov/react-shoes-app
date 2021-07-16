@@ -19,11 +19,11 @@ const ProductCard = ({
   const [isFavorite, setIsFavorite] = React.useState(favorited)
 
   const onClickAdd = () => {
-    onAdd({id, image, categories, title, price})
+    onAdd({id, parentId: id, image, categories, title, price})
   }
 
   const onClickWish = () => {
-    onFavorite({id, image, categories, title, price})
+    onFavorite({id, parentId: id, image, categories, title, price})
     setIsFavorite(!isFavorite)
   }
 
@@ -51,15 +51,15 @@ const ProductCard = ({
             <span>{categories}</span>
             <h3>{title}</h3>
             <span>${price}</span>
-            <button className={isItemAdded(id) ? 'checked' : ''} onClick={onClickAdd}>{isItemAdded(id) ? "Added" : "Add to cart"}</button>
+            {onAdd && <button className={isItemAdded(id) ? 'checked' : ''} onClick={onClickAdd}>{isItemAdded(id) ? "Added" : "Add to cart"}</button>}
           </div>
-          <div className="productCard__addToWishlist" >
+          {onFavorite && <div className="productCard__addToWishlist" >
             <button className={isFavorite ? 'active' : ''} onClick={onClickWish}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </button>
-          </div>
+          </div>}
         </>)
       }
     </div>

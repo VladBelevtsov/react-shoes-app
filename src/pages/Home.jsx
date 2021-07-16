@@ -31,13 +31,13 @@ const Home = ({
   return (
     <main>
       <div className="container">
-        <div className="flex items-center justify-between mt-70">
+        <div className="flex items-center justify-between mt-70 mb-60">
           <h1>
             {searchValue ? `Search by request: "${searchValue}"` : 'New Releases'}
           </h1>
           <input onChange={onChangeSearchInput} value={searchValue} className="search" placeholder="Search..." />
         </div>
-        <div className="grid grid-cols-4 gap-32 mt-60">
+        <div className="grid grid-cols-4 gap-32">
           {renderItems()}
         </div>
       </div>
